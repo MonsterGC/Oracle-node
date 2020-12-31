@@ -1,0 +1,38 @@
+.border {
+  width: 80%;
+  height: 400rpx;
+  margin: 100rpx auto;
+}
+
+.logo {
+  width: 420rpx;
+  margin: auto;
+}
+
+.logo image {
+  width: 360rpx;
+  height: 170rpx;
+}
+
+.current {
+  display: flex;
+  flex-direction: row;
+}
+
+.current view {
+  width: 200rpx;
+}
+
+.btn {
+  line-height: 60rpx;
+}
+
+.register {
+  position: absolute;
+  bottom: 200rpx;
+  right: 40rpx;
+  background: #1c2438;
+  color: #fff;
+  border-radius: 50%;
+  padding: 20rpx;
+}

@@ -1,0 +1,25 @@
+<i-card title="{{content.B_CLASS}}" extra="{{content.B_AUTHOR}}" thumb="{{content.B_IMG}}">
+  <view slot="content">{{content.B_TITLE}}</view>
+  <view slot="content" style="margin-left:400rpx;">预览:100</view>
+  <view slot="footer">{{content.B_DETAIL}}</view>
+</i-card>
+<i-modal title="点评" visible="{{ visible1 }}" bind:ok="handleOk" bind:cancel="handleClose">
+  <input type="text" bindinput="bindChange" placeholder="点评内容" />
+</i-modal>
+<!-- 发布评论 -->
+<view class="flex" bindtap="handleOpen">
+  <image src="../../images/send.png"></image>
+</view>
+
+<!-- 点评 -->
+<view class="list" style="margin-top:20rpx;">
+  <block wx:for="{{msg}}">
+    <view style="margin-top:20rpx;">
+      <i-card title="{{item.U_EMAIL}}" extra="{{item.M_TIME}}">
+        <view slot="footer">{{item.M_CONTENT}}</view>
+      </i-card>
+    </view>
+  </block>
+  <i-load-more tip="没点评了" loading="{{ false }}" />
+</view>
+<i-message id="message" />

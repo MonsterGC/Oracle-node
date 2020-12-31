@@ -1,0 +1,23 @@
+<template name="email_phone">
+  <view class="border">
+    <view class="logo">
+      <image src="{{template.logoUrl}}"></image>
+    </view>
+    <i-panel title="表单">
+      <i-input value="{{ template.nameValue }}" type="{{template.nameType}}" bind:change="nameValueChange"
+        title="{{template.name}}" autofocus placeholder="{{template.name}}" />
+      <i-input value="{{ template.password }}" type="password" bind:change="passwordChange" title="密码"
+        placeholder="密码" />
+      <i-input wx:if="{{template.status == 1}}" value="{{ template.password2 }}" type="password"
+        bind:change="passwordChange2" title="确认密码" placeholder="确认密码" />
+    </i-panel>
+    <i-button i-class="btn" bind:click="submit" type="primary">登录</i-button>
+    <!-- 注册 -->
+    <view class="register" wx:if="{{template.status == 1}}" bindtap="navLogin">
+      登录
+    </view>
+    <view class="register" wx:else bindtap="navRegister">
+      注册
+    </view>
+  </view>
+</template>

@@ -1,0 +1,52 @@
+<i-notice-bar icon="systemprompt" loop>
+  今天《小蔡历险记》上映！！！让我们一起约起来吧！！！
+</i-notice-bar>
+<view wx:if="{{current == 'homepage'}}" class="homepage">
+  <i-tabs current="{{ current_scroll }}" wx:if="{{num > 7}}" scroll bindchange="handleChangeScroll">
+    <block wx:for="{{type}}">
+      <i-tab key="{{item}}" title="{{item}}"></i-tab>
+    </block>
+  </i-tabs>
+  <i-tabs current="{{ current_scroll }}" wx:else bindchange="handleChangeType">
+    <block wx:for="{{type}}">
+      <i-tab key="{{item}}" title="{{item}}"></i-tab>
+    </block>
+  </i-tabs>
+  <scroll-view scroll-y="true" style="height:{{height}}px;" bindscrolltolower="lower">
+    <block wx:for="{{content}}">
+      <view style="margin-top:20rpx;" bindtap="navDetail" data-Id="{{item}}">
+        <i-card title="{{item.B_CLASS}}" thumb="{{item.B_IMG}}" extra="作者: {{item.B_AUTHOR}}">
+          <view slot="content">{{item.B_TITLE}}</view>
+        </i-card>
+      </view>
+    </block>
+    <i-load-more wx:if="{{!status}}" tip="这是我底线" loading="{{ false }}" />
+  </scroll-view>
+</view>
+<view wx:else>
+  <view class="mine">
+    <view class="avatar">
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <view style="margin-top:20rpx;">
+      {{userEmail}}
+    </view>
+  </view>
+  <i-modal title="修改密码" visible="{{ visible1 }}" bind:ok="handleOk" bind:cancel="handleClose">
+    <input type="text" bindinput="bindChange" placeholder="原密码" />
+    <input type="text" bindinput="bindChange2" placeholder="修改密码" />
+    <input type="text" bindinput="bindChange3" placeholder="确认密码" />
+  </i-modal>
+  <view class="mine-content">
+    <view bindtap="navMsg">管理书评</view>
+    <view bindtap="modify">修改密码</view>
+  </view>
+  <view class="close" bindtap="close">退出登录</view>
+</view>
+<view class="bottom">
+  <i-tab-bar current="{{ current }}" bindchange="handleChange">
+    <i-tab-bar-item key="homepage" icon="homepage" current-icon="homepage_fill" title="首页"></i-tab-bar-item>
+    <i-tab-bar-item key="mine" icon="mine" current-icon="mine_fill" title="我的"></i-tab-bar-item>
+  </i-tab-bar>
+</view>
+<i-message id="message" />

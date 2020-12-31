@@ -1,0 +1,3 @@
+<import src="../../templates/login/login.wxml" />
+<template is="email_phone" data="{{template}}"></template>
+<i-message id="message" />

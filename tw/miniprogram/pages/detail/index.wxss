@@ -1,0 +1,13 @@
+.flex{
+  position: fixed;
+  bottom: 100rpx;
+  right: 40rpx;
+  border-radius: 50%;
+  background: #fff;
+  padding: 10rpx;
+  z-index: 9999;
+}
+.flex image{
+  width: 50rpx;
+  height: 50rpx;
+}

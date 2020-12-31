@@ -1,0 +1,18 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/index",
+    "pages/detail/index",
+    "pages/register/index",
+    "pages/mineMsg/index"
+  ],
+  "window": {
+    "backgroundColor": "#17233d",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#17233d",
+    "navigationBarTitleText": "小蔡书评",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

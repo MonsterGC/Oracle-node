@@ -1,0 +1,10 @@
+<block wx:for="{{content}}">
+  <view style="margin-top:20rpx;" bindtap="del" data-Data="{{item}}" data-Index="{{index}}">
+    <i-card title="卡片标题" extra="{{item.B_TITLE}}" thumb="{{item.B_IMG}}">
+      <view slot="content">{{item.M_CONTENT}}</view>
+      <view slot="footer">点击删除</view>
+    </i-card>
+  </view>
+</block>
+<i-load-more tip="这是我底线" loading="{{ false }}" />
+<i-message id="message" />

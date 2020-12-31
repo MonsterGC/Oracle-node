@@ -1,0 +1,5 @@
+@import "../../templates/login/login.wxss";
+
+.i-btn {
+  line-height: 30px;
+}
